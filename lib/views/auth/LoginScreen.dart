@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
+import 'package:linkia_ecommerce/views/main/MainScreen.dart';
 import 'ForgetPasswordScreen.dart';
 import 'RegisterScreen.dart';
 
@@ -91,7 +92,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             8), // Set your desired corner radius
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(()=>MainScreen());
+                    },
                     child: Text('Sign In',
                         style: GoogleFonts.beVietnamPro(
                             color: AppColor.primaryWhiteColor,

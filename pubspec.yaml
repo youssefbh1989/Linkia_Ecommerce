@@ -41,6 +41,8 @@ dependencies:
   dio: ^5.2.1+1
   flutter_signin_button: ^2.0.0
   flutter_svg: ^0.22.0
+  image_picker: ^1.0.1
+  flutter_switch: ^0.3.2
 
 
 dev_dependencies:

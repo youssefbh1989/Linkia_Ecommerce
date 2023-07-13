@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
+import 'package:linkia_ecommerce/views/main/MainScreen.dart';
 
 import 'LoginScreen.dart';
 
@@ -103,7 +104,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             8), // Set your desired corner radius
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(()=>MainScreen());
+                    },
                     child: Text('Sign up',
                         style: GoogleFonts.beVietnamPro(
                             color: AppColor.primaryWhiteColor,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
+import 'package:linkia_ecommerce/views/auth/LoginScreen.dart';
 import 'EmailConfirmationScreen.dart';
-import 'RegisterScreen.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
@@ -117,7 +116,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   alignment: Alignment.bottomCenter,
                   child: TextButton(
                     onPressed: () {
-                      Get.to(() => RegisterScreen());
+                      Get.to(() => LoginScreen());
                     },
                     child: Text('Back to login',
                         style: GoogleFonts.beVietnamPro(
