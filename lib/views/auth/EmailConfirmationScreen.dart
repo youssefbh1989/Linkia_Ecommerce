@@ -16,6 +16,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.primaryWhiteColor,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
@@ -90,7 +91,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                   alignment: Alignment.bottomCenter,
                   child: TextButton(
                     onPressed: () {
-                      Get.to(() => NewPAsswordScreen());
+                      Get.to(() => NewPasswordScreen());
                     },
                     child: Text('Open Email',
                         style: GoogleFonts.beVietnamPro(

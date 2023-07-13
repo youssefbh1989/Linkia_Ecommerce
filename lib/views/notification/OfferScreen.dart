@@ -10,6 +10,7 @@ class OfferScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: AppColor.primaryWhiteColor,
       appBar: AppBar(
         title: Text('Offer',style: GoogleFonts.beVietnamPro(
             color: AppColor.primaryBlackColor,

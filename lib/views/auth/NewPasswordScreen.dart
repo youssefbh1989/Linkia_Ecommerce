@@ -7,17 +7,18 @@ import 'package:linkia_ecommerce/views/main/MainScreen.dart';
 
 
 
-class NewPAsswordScreen extends StatefulWidget {
-  const NewPAsswordScreen({super.key});
+class NewPasswordScreen extends StatefulWidget {
+  const NewPasswordScreen({super.key});
 
   @override
-  State<NewPAsswordScreen> createState() => _NewPAsswordScreenState();
+  State<NewPasswordScreen> createState() => _NewPasswordScreenState();
 }
 
-class _NewPAsswordScreenState extends State<NewPAsswordScreen> {
+class _NewPasswordScreenState extends State<NewPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.primaryWhiteColor,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,

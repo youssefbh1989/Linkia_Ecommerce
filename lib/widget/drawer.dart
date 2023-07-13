@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 import 'package:linkia_ecommerce/controllers/MainController.dart';
+import 'package:linkia_ecommerce/views/notification/NotificationScreen.dart';
 import 'package:linkia_ecommerce/views/privacy/PrivacyScreen.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -74,7 +75,10 @@ class DrawerWidget extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/imgs/Bell.png'),
               title: Text('Notification'),
-              onTap: () {},
+              onTap: () {
+                Get.back();
+                Get.to(()=>NotificationScreen());
+              },
             ),
             ListTile(
               leading: Image.asset('assets/imgs/bag-tick.png'),

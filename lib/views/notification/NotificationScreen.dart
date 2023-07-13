@@ -14,6 +14,7 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: AppColor.primaryWhiteColor,
       appBar: AppBar(
         title: Text('Notification',style: GoogleFonts.beVietnamPro(
           color: AppColor.primaryBlackColor,

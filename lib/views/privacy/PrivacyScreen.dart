@@ -28,6 +28,25 @@ class PrivacyScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width,
+              color: AppColor.primaryBlackColor,
+              child: Center(child: Text('FREE SHIPPING AND RETURNS',style:
+              GoogleFonts.beVietnamPro(
+                color: AppColor.primaryWhiteColor,fontWeight: FontWeight.w400,
+                fontSize: 12
+              ),)),
+            ),
+            SizedBox(height: 50,),
+            Text('PRIVACY POLICY', style: GoogleFonts.tenorSans(
+                fontSize: 26, fontWeight: FontWeight.w400)),
+            Image.asset(
+              'assets/imgs/divider.png',
+              width: 150,
+              height: 50,
+              color: AppColor.primaryBlackColor,
+            ),
 
           ],
         ),

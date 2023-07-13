@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 
@@ -10,6 +9,7 @@ class ActivityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: AppColor.primaryWhiteColor,
       appBar: AppBar(
         title: Text('Activity',style: GoogleFonts.beVietnamPro(
             color: AppColor.primaryBlackColor,
