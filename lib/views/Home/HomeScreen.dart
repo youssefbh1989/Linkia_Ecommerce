@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.primaryWhiteColor,
       key: _scaffoldKey,
       drawer: const DrawerWidget(),
       appBar: AppBar(

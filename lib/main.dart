@@ -14,11 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-
       title: 'Linkia E-commerce',
       debugShowCheckedModeBanner: false,
       initialBinding: ControllersBinding(),
-      home:  SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

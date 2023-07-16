@@ -23,8 +23,10 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
+
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 20,),
                 Text('HAVE AN ACCOUNT',
                     style: GoogleFonts.tenorSans(
                         fontSize: 26, fontWeight: FontWeight.w400)),

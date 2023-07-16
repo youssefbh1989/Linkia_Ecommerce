@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 import 'package:linkia_ecommerce/views/auth/ChangePasswordScreen.dart';
+import 'package:linkia_ecommerce/views/myaddresses/AddressesScreen.dart';
 import 'package:linkia_ecommerce/views/notification/NotificationSettingScreen.dart';
 import 'package:linkia_ecommerce/widget/drawer.dart';
 
@@ -119,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),),
               trailing: const Icon(Icons.arrow_forward_ios,size: 20,),
               onTap: () {
-                // TODO: Navigate to the My Address screen
+           Get.to(()=>AdressesScreen());
               },
             ),
             const SizedBox(height: 32),

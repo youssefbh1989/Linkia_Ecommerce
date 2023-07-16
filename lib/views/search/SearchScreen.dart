@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 import 'package:linkia_ecommerce/views/main/MainScreen.dart';
 
+import 'SearchScreenResult.dart';
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
@@ -48,6 +50,9 @@ class _SearchScreenState extends State<SearchScreen> {
                             borderSide: BorderSide.none,
                           ),
                         ),
+                        onTap: () {
+                          Get.to(() => const SearchScreenResult());
+                        },
 
                       ),
                     ),

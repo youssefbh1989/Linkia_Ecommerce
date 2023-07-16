@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
+import 'package:linkia_ecommerce/views/bag/BagScreen.dart';
 import 'package:linkia_ecommerce/views/reviews/ReviewsScreen.dart';
 
 class ProductDetail extends StatefulWidget {
@@ -55,7 +56,7 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
           IconButton(
             onPressed: () {
-              // Handle add to bag button press
+        Get.to(()=>BagScreen());
             },
             icon: Image.asset(
               'assets/imgs/Tote.png',

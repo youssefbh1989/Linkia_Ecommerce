@@ -73,66 +73,52 @@ class _BagScreenState extends State<BagScreen> {
                 },
               ),
               const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(
+              Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppColor.primaryGreyColor,
+                    width: 0.5,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      labelText: 'Promo Code',
+                      labelStyle: GoogleFonts.beVietnamPro(
                           color: AppColor.primaryGreyColor,
-                          width: 0.5,
-                        ),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-
-                            border: InputBorder.none,
-                            labelText: 'Promo Code',
-                            labelStyle:  GoogleFonts.beVietnamPro(
-                              color: AppColor.primaryGreyColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12
-
-                          ),
-                            suffixIcon: TextButton(
-                              onPressed: () {
-                                // TODO: Implement the logic for applying the promo code
-                              },
-                              child:  Text('Apply',style: GoogleFonts.beVietnamPro(
-                                color: AppColor.primaryBlackColor,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14
-
-                              ),),
-                            ),
-                          ),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12),
+                      suffixIcon: TextButton(
+                        onPressed: () {
+                          // TODO: Implement the logic for applying the promo code
+                        },
+                        child: Text(
+                          'Apply',
+                          style: GoogleFonts.beVietnamPro(
+                              color: AppColor.primaryBlackColor,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16),
-                  Container(),
-                ],
+                ),
               ),
-
+              const SizedBox(width: 16),
 
               const SizedBox(height: 16),
               // TODO: Implement the price details section
 
               const SizedBox(height: 16),
-               Text(
-                'Total Amount',
+              Text('Total Amount',
                   style: GoogleFonts.beVietnamPro(
                       color: AppColor.primaryGreyColor,
-                      fontWeight: FontWeight.w400
-
-                  )
-              ),
+                      fontWeight: FontWeight.w400)),
               // TODO: Implement the total amount section
 
               const SizedBox(height: 32),
@@ -179,7 +165,8 @@ class CartItem extends StatelessWidget {
   final VoidCallback? onMinusPressed;
   final VoidCallback? onRemovePressed;
 
-  const CartItem({super.key,
+  const CartItem({
+    super.key,
     required this.productName,
     required this.price,
     required this.category,
@@ -211,20 +198,15 @@ class CartItem extends StatelessWidget {
                     onPressed: onMinusPressed,
                     icon: const Icon(Icons.remove, size: 15),
                   ),
-
-
-                   Padding(
+                  Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
                       '1', // Replace with the actual quantity
                       style: GoogleFonts.beVietnamPro(
                           color: AppColor.primaryBlackColor,
-                          fontWeight: FontWeight.w600
-
-                      ),
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
-
                   IconButton(
                     onPressed: onPlusPressed,
                     icon: const Icon(Icons.add, size: 15),
@@ -242,20 +224,14 @@ class CartItem extends StatelessWidget {
               Text(
                 productName,
                 style: GoogleFonts.beVietnamPro(
-              color: AppColor.primaryGreyColor,
-              fontWeight: FontWeight.w600
-
-          ),
+                    color: AppColor.primaryGreyColor,
+                    fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
-              Text(
-                category,
+              Text(category,
                   style: GoogleFonts.beVietnamPro(
                       color: AppColor.primaryGreyColor,
-                      fontWeight: FontWeight.w600
-
-                  )
-              ),
+                      fontWeight: FontWeight.w600)),
               const SizedBox(height: 8),
               Row(
                 children: [
@@ -263,9 +239,7 @@ class CartItem extends StatelessWidget {
                     'QAR ${price.toStringAsFixed(2)}',
                     style: GoogleFonts.beVietnamPro(
                         color: AppColor.primaryBlackColor,
-                        fontWeight: FontWeight.w600
-
-                    ),
+                        fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(width: 8),
                   TextButton(
@@ -273,13 +247,11 @@ class CartItem extends StatelessWidget {
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
                     ),
-                    child:  Text(
+                    child: Text(
                       'Remove',
                       style: GoogleFonts.beVietnamPro(
                           color: AppColor.primaryBlackColor,
-                          fontWeight: FontWeight.w600
-
-                      ),
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                 ],
@@ -291,4 +263,3 @@ class CartItem extends StatelessWidget {
     );
   }
 }
-

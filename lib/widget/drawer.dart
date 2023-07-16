@@ -57,11 +57,7 @@ class DrawerWidget extends StatelessWidget {
               title: Text('Best Sellers'),
               onTap: () {},
             ),
-            ListTile(
-              leading: Image.asset('assets/imgs/category-2.png'),
-              title: Text('Brands'),
-              onTap: () {},
-            ),
+
             ListTile(
               leading: Image.asset('assets/imgs/receipt-2.png'),
               title: Text('Sale'),
@@ -83,11 +79,6 @@ class DrawerWidget extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/imgs/bag-tick.png'),
               title: Text('My Orders'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Image.asset('assets/imgs/Gear.png'),
-              title: Text('Settings'),
               onTap: () {},
             ),
             ListTile(
