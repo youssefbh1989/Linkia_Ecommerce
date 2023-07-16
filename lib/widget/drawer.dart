@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 import 'package:linkia_ecommerce/controllers/MainController.dart';
+import 'package:linkia_ecommerce/views/myorders/MyOrdersScreen.dart';
 import 'package:linkia_ecommerce/views/notification/NotificationScreen.dart';
 import 'package:linkia_ecommerce/views/privacy/PrivacyScreen.dart';
 
@@ -79,7 +80,10 @@ class DrawerWidget extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/imgs/bag-tick.png'),
               title: Text('My Orders'),
-              onTap: () {},
+              onTap: () {
+                Get.back();
+                Get.to(()=>MyOrdersScreen());
+              },
             ),
             ListTile(
               leading: Image.asset('assets/imgs/CircleWavyQuestion.png'),
