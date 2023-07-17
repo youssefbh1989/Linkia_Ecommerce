@@ -9,7 +9,8 @@ import 'package:linkia_ecommerce/widget/drawer.dart';
 import 'ChekoutScreen.dart';
 
 class BagScreen extends StatefulWidget {
-  const BagScreen({Key? key}) : super(key: key);
+  final  bool? isHome;
+  const BagScreen({Key? key,  this.isHome}) : super(key: key);
 
   @override
   State<BagScreen> createState() => _BagScreenState();
@@ -29,7 +30,12 @@ class _BagScreenState extends State<BagScreen> {
       key: _scaffoldKey,
       drawer: const DrawerWidget(),
       appBar: AppBar(
-        leading: IconButton(
+        leading: widget.isHome == true?IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.black,),
+          onPressed: () {
+         Get.back();
+          },
+        ):IconButton(
           icon: Image.asset(
             'assets/imgs/List.png',
             color: AppColor.primaryBlackColor,

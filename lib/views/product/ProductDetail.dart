@@ -57,7 +57,7 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
           IconButton(
             onPressed: () {
-        Get.to(()=>BagScreen());
+            Get.to(()=>BagScreen(isHome:true));
             },
             icon: Image.asset(
               'assets/imgs/Tote.png',
