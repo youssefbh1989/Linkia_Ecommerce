@@ -7,7 +7,12 @@ import 'package:linkia_ecommerce/views/brand/BranScreen.dart';
 import 'package:linkia_ecommerce/views/category/CategoryScreen.dart';
 import 'package:linkia_ecommerce/views/profile/ProfileScreen.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   final MainController controller = Get.put(MainController());
 
   final List<Widget> pages = [
@@ -38,9 +43,9 @@ class MainScreen extends StatelessWidget {
           unselectedItemColor: Colors.grey,
           currentIndex: controller.currentIndex.value,
           onTap: (index) {
-            controller.changePage(index);
-            print(pages[controller.currentIndex.value]);
-            print(controller.currentIndex.value);
+            setState(() {
+              controller.changePage(index);
+            });
           },
           type: BottomNavigationBarType.fixed, // Set type to fixed
           items: [
@@ -49,7 +54,9 @@ class MainScreen extends StatelessWidget {
                 'assets/imgs/HouseSimple.png',
                 height: 30,
                 width: 30,
-                color: controller.currentIndex.value == 0 ? Colors.black : Colors.grey,
+                color: controller.currentIndex.value == 0
+                    ? Colors.black
+                    : Colors.grey,
               ),
               label: 'Home',
             ),
@@ -58,7 +65,9 @@ class MainScreen extends StatelessWidget {
                 'assets/imgs/SquaresFour.png',
                 height: 30,
                 width: 30,
-                color: controller.currentIndex.value == 1 ? Colors.black : Colors.grey,
+                color: controller.currentIndex.value == 1
+                    ? Colors.black
+                    : Colors.grey,
               ),
               label: 'Category',
             ),
@@ -67,7 +76,9 @@ class MainScreen extends StatelessWidget {
                 'assets/imgs/Tote.png',
                 height: 30,
                 width: 30,
-                color: controller.currentIndex.value == 2 ? Colors.black : Colors.grey,
+                color: controller.currentIndex.value == 2
+                    ? Colors.black
+                    : Colors.grey,
               ),
               label: 'Bag',
             ),
@@ -76,7 +87,9 @@ class MainScreen extends StatelessWidget {
                 'assets/imgs/sticker.png',
                 height: 30,
                 width: 30,
-                color: controller.currentIndex.value == 3 ? Colors.black : Colors.grey,
+                color: controller.currentIndex.value == 3
+                    ? Colors.black
+                    : Colors.grey,
               ),
               label: 'Brand',
             ),
@@ -85,7 +98,9 @@ class MainScreen extends StatelessWidget {
                 'assets/imgs/Smiley.png',
                 height: 30,
                 width: 30,
-                color: controller.currentIndex.value == 4 ? Colors.black : Colors.grey,
+                color: controller.currentIndex.value == 4
+                    ? Colors.black
+                    : Colors.grey,
               ),
               label: 'Profile',
             ),
@@ -95,5 +110,6 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
 
 

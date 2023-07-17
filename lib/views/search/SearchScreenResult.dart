@@ -21,7 +21,7 @@ class SearchScreenResult extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                  Get.back();
+                      Get.back();
                     },
                     icon: Icon(Icons.arrow_back),
                   ),
@@ -40,31 +40,32 @@ class SearchScreenResult extends StatelessWidget {
                             borderSide: BorderSide.none,
                           ),
                         ),
-
                       ),
                     ),
                   ),
                   const SizedBox(width: 8),
-                  TextButton(onPressed: (){
-                    Get.to(()=>SearchScreenResult());
-                  },
-                    child: Text('Search',style: GoogleFonts.beVietnamPro(
-                        fontSize: 10,
-                        color: AppColor.primaryBlackColor,
-                        fontWeight: FontWeight.w400
-                    ),),),
-
-
+                  TextButton(
+                    onPressed: () {
+                      Get.to(() => SearchScreenResult());
+                    },
+                    child: Text(
+                      'Search',
+                      style: GoogleFonts.beVietnamPro(
+                          fontSize: 10,
+                          color: AppColor.primaryBlackColor,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
                 ],
               ),
             ),
             Padding(
-              padding:  EdgeInsets.all(0.0),
+              padding: EdgeInsets.all(0.0),
               child: Container(
-                decoration:  BoxDecoration(
+                decoration: BoxDecoration(
                   color: AppColor.primaryWhiteColor,
                   borderRadius: BorderRadius.circular(0),
-                  boxShadow:  [
+                  boxShadow: [
                     BoxShadow(
                       color: AppColor.primaryWhiteColor,
                       offset: Offset(0, 2),
@@ -77,7 +78,6 @@ class SearchScreenResult extends StatelessWidget {
                   children: [
                     MaterialButton(
                       height: 40,
-
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -94,14 +94,19 @@ class SearchScreenResult extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: 5,),
-                          Icon(Icons.arrow_downward,color: AppColor.primaryBlackColor,size: 15,)
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.arrow_downward,
+                            color: AppColor.primaryBlackColor,
+                            size: 15,
+                          )
                         ],
                       ),
                     ),
                     MaterialButton(
                       height: 40,
-
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -118,41 +123,53 @@ class SearchScreenResult extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: 5,),
-                          Icon(Icons.arrow_downward,color: AppColor.primaryBlackColor,size: 15,)
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.arrow_downward,
+                            color: AppColor.primaryBlackColor,
+                            size: 15,
+                          )
                         ],
                       ),
                     ),
-                MaterialButton(
-                  height: 40,
-
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  onPressed: () {
-                    _showFilterModal(context);
-                  },
-                  child: Row(
-
-                    children: [
-                      Text(
-                        'Filter',
-                        style: GoogleFonts.beVietnamPro(
-                          color: AppColor.primaryBlackColor,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
+                    MaterialButton(
+                      height: 40,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
                       ),
-                     SizedBox(width: 5,),
-                     Icon(Icons.filter_list,color: AppColor.primaryBlackColor,size: 15,)
-                    ],
-                  ),
-                ),
+                      onPressed: () {
+                        _showFilterModal(context);
+                      },
+                      child: Row(
+                        children: [
+                          Text(
+                            'Filter',
+                            style: GoogleFonts.beVietnamPro(
+                              color: AppColor.primaryBlackColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.filter_list,
+                            color: AppColor.primaryBlackColor,
+                            size: 15,
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: GridView.builder(
                 shrinkWrap: true,
@@ -230,12 +247,76 @@ class SearchScreenResult extends StatelessWidget {
       ),
     );
   }
+
   void _showFilterModal(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+              child: Column(
+                children: [
+                  Text(
+                    'Price Range',
+                    style: GoogleFonts.beVietnamPro(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Slider(
+                    activeColor: AppColor.primaryBlackColor,
+                    inactiveColor: AppColor.secondaryGreyColor,
+                    value: 0.0,
+                    // Add your slider configuration here
+                    onChanged: (double value) {
+                      // Handle slider value change
+                    },
+                  ),
+                ],
+              ),
+            ),
+            // Category Wrap
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Category',
+                    style: GoogleFonts.beVietnamPro(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Wrap(
+                    spacing: 8,
+                    children: [
+                      FilterChip(
+                        label: Text('Category'),
+                        onSelected: (bool selected) {
+                          // Handle chip selection
+                        },
+                      ),
+                      FilterChip(
+                        label: Text('Category '),
+                        onSelected: (bool selected) {
+                          // Handle chip selection
+                        },
+                      ),
+                      FilterChip(
+                        label: Text('Category '),
+                        onSelected: (bool selected) {
+                          // Handle chip selection
+                        },
+                      ),
+                      // Add more FilterChip widgets as needed
+                    ],
+                  ),
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -288,76 +369,12 @@ class SearchScreenResult extends StatelessWidget {
                 ],
               ),
             ),
-            // Additional filters
-            // Price Range
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Row(
-                children: [
-                  Text(
-                    'Price Range',
-                    style: GoogleFonts.beVietnamPro(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Expanded(
-                    child: Slider(
-                      value: 0.0,
-                      // Add your slider configuration here
-                      onChanged: (double value) {
-                        // Handle slider value change
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // Category Wrap
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Category',
-                    style: GoogleFonts.beVietnamPro(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Wrap(
-                    spacing: 8,
-                    children: [
-                      FilterChip(
-                        label: Text('Category One'),
-                        onSelected: (bool selected) {
-                          // Handle chip selection
-                        },
-                      ),
-                      FilterChip(
-                        label: Text('Category Two'),
-                        onSelected: (bool selected) {
-                          // Handle chip selection
-                        },
-                      ),
-                      FilterChip(
-                        label: Text('Category Three'),
-                        onSelected: (bool selected) {
-                          // Handle chip selection
-                        },
-                      ),
-                      // Add more FilterChip widgets as needed
-                    ],
-                  ),
-                ],
-              ),
-            ),
           ],
         );
       },
     );
   }
+
   void _showSortByDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -406,6 +423,7 @@ class SearchScreenResult extends StatelessWidget {
       },
     );
   }
+
   void _showProductDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -441,4 +459,3 @@ class SearchScreenResult extends StatelessWidget {
     );
   }
 }
-

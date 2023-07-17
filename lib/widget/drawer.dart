@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
-import 'package:linkia_ecommerce/controllers/MainController.dart';
 import 'package:linkia_ecommerce/views/myorders/MyOrdersScreen.dart';
 import 'package:linkia_ecommerce/views/notification/NotificationScreen.dart';
 import 'package:linkia_ecommerce/views/privacy/PrivacyScreen.dart';
+import 'package:linkia_ecommerce/views/product/AllProduct.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.primaryWhiteColor,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
@@ -36,9 +37,9 @@ class DrawerWidget extends StatelessWidget {
                     ),
                   ),
                   child: const CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColor.primaryWhiteColor,
                     radius: 12,
-                    foregroundColor: Colors.black,
+                    foregroundColor: AppColor.primaryBlackColor,
                     child: Icon(
                       Icons.close,
                       size: 15,
@@ -47,73 +48,157 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
             ),
-
-            ListTile(
-              leading: Image.asset('assets/imgs/bag-happy.png'),
-              title: Text('New Arrivals'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Image.asset('assets/imgs/Tag.png'),
-              title: Text('Best Sellers'),
-              onTap: () {},
-            ),
-
-            ListTile(
-              leading: Image.asset('assets/imgs/receipt-2.png'),
-              title: Text('Sale'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Image.asset('assets/imgs/Heart.png'),
-              title: Text('Favourite'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Image.asset('assets/imgs/Bell.png'),
-              title: Text('Notification'),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/bag-happy.png',
+              title: 'New Arrivals',
               onTap: () {
                 Get.back();
-                Get.to(()=>NotificationScreen());
+                Get.to(()=>AllProduct(title: 'NEW ARRIVALS',));
               },
             ),
-            ListTile(
-              leading: Image.asset('assets/imgs/bag-tick.png'),
-              title: Text('My Orders'),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/Tag.png',
+              title: 'Best Sellers',
               onTap: () {
                 Get.back();
-                Get.to(()=>MyOrdersScreen());
+                Get.to(()=>AllProduct(title: 'BEST SELLERS',));
               },
             ),
-            ListTile(
-              leading: Image.asset('assets/imgs/CircleWavyQuestion.png'),
-              title: Text('FAQs'),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/receipt-2.png',
+              title: 'Sale',
               onTap: () {},
             ),
-            ListTile(
-              leading: Image.asset('assets/imgs/Headset.png'),
-              title: Text('Help and Support'),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/Heart.png',
+              title: 'Favourite',
               onTap: () {},
             ),
-            ListTile(
-              leading: Image.asset('assets/imgs/privacy.png'),
-              title: Text('Privacy Policy'),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/Bell.png',
+              title: 'Notification',
+              onTap: () {
+                Get.back();
+                Get.to(() => NotificationScreen());
+              },
+            ),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/bag-tick.png',
+              title: 'My Orders',
+              onTap: () {
+                Get.back();
+                Get.to(() => MyOrdersScreen());
+              },
+            ),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/CircleWavyQuestion.png',
+              title: 'FAQs',
+              onTap: () {},
+            ),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/Headset.png',
+              title: 'Help and Support',
+              onTap: () {},
+            ),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/privacy.png',
+              title: 'Privacy Policy',
               onTap: () {
                 Get.back();
                 Get.to(() => PrivacyScreen());
               },
             ),
-
-            ListTile(
-              leading: Image.asset('assets/imgs/UploadSimple.png'),
-              title: Text('Logout'),
+            DrawerListItem(
+              leadingAsset: 'assets/imgs/UploadSimple.png',
+              title: 'Logout',
               onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text(
+                        'Logout',
+                        style: GoogleFonts.tenorSans(
+                          color: AppColor.primaryBlackColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      content: Text(
+                        'Are you sure you want to logout?',
+                        style: GoogleFonts.tenorSans(
+                          color: AppColor.primaryBlackColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            // Perform logout action
+                            // TODO: Implement your logout functionality here
+                            Navigator.of(context).pop(); // Close the dialog
+                          },
+                          child: Text(
+                            'Yes',
+                            style: GoogleFonts.tenorSans(
+                              color: AppColor.primaryBlackColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(); // Close the dialog
+                          },
+                          child: Text(
+                            'No',
+                            style: GoogleFonts.tenorSans(
+                              color: AppColor.primaryBlackColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
               },
             ),
             // Add more list tiles here
           ],
         ),
       ),
+    );
+  }
+}
+
+class DrawerListItem extends StatelessWidget {
+  final String leadingAsset;
+  final String title;
+  final VoidCallback onTap;
+
+  const DrawerListItem({
+    required this.leadingAsset,
+    required this.title,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Image.asset(leadingAsset),
+      title: Text(
+        title,
+        style: GoogleFonts.beVietnamPro(
+          color: AppColor.primaryBlackColor,
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      onTap: onTap,
     );
   }
 }

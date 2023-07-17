@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 import 'package:linkia_ecommerce/views/notification/NotificationScreen.dart';
+import 'package:linkia_ecommerce/views/product/AllProduct.dart';
 import 'package:linkia_ecommerce/views/product/ProductDetail.dart';
 import 'package:linkia_ecommerce/views/search/SearchScreen.dart';
 import 'package:linkia_ecommerce/widget/drawer.dart';
@@ -162,12 +163,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              Text(
-                'NEW ARRIVALS',
-                style: GoogleFonts.tenorSans(
-                  color: AppColor.primaryBlackColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+              GestureDetector(
+                onTap: (){
+                  Get.to(()=>AllProduct(title:'NEW ARRIVALS'));
+                },
+                child: Text(
+                  'NEW ARRIVALS',
+                  style: GoogleFonts.tenorSans(
+                    color: AppColor.primaryBlackColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               Image.asset(
@@ -214,12 +220,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 16),
-              Text(
-                'BEST SELLERS',
-                style: GoogleFonts.tenorSans(
-                  color: AppColor.primaryBlackColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+              GestureDetector(
+                onTap: (){
+                  Get.to(()=>AllProduct(title:'BEST SELLERS'));
+                },
+                child: Text(
+                  'BEST SELLERS',
+                  style: GoogleFonts.tenorSans(
+                    color: AppColor.primaryBlackColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               Image.asset(
@@ -237,7 +248,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(5.0),
-                      child: buildProductCard(),
+                      child: GestureDetector(
+                          onTap: (){
+                            Get.to(()=>ProductDetail());
+                          },
+                          child: buildProductCard()),
                     );
                   },
                 ),

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
+import 'package:linkia_ecommerce/utiles/ColumnBuilder.dart';
+
+import 'OrderSummaryScreen.dart';
 
 class MyOrdersScreen extends StatelessWidget {
   const MyOrdersScreen({super.key});
@@ -95,24 +98,28 @@ class MyOrdersScreen extends StatelessWidget {
                           thickness: 1,
                         ),
                       ),
-                      ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
+                      ColumnBuilder(
                         itemCount: 2,
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(5.0),
-                            child: _buildOrderCard(
-                              image:
-                              NetworkImage('https://via.placeholder.com/100'),
-                              status: 'Ongoing',
-                              date: 'July 15, 2023',
-                              time: '10:00 AM',
-                              price: 'QAR 50.00',
-                              productName: 'Product 1',
-                              quantity: '2',
-                              showReview: false,
-                              buttonText: 'Track Order',
+                            child: GestureDetector(
+                              onTap: (){
+                                Get.to(()=>OrderSummary());
+
+                              },
+                              child: _buildOrderCard(
+                                image:
+                                NetworkImage('https://via.placeholder.com/100'),
+                                status: 'Ongoing',
+                                date: 'July 15, 2023',
+                                time: '10:00 AM',
+                                price: 'QAR 50.00',
+                                productName: 'Product 1',
+                                quantity: '2',
+                                showReview: false,
+                                buttonText: 'Track Order',
+                              ),
                             ),
                           );
                         },
@@ -209,23 +216,28 @@ class MyOrdersScreen extends StatelessWidget {
                           thickness: 1,
                         ),
                       ),
-                      ListView.builder(
+                      ColumnBuilder(
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         itemCount: 2,
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(5.0),
-                            child: _buildOrderCard(
-                              image: NetworkImage('https://via.placeholder.com/100'),
-                              status: 'Delivered',
-                              date: 'July 12, 2023',
-                              time: '9:45 AM',
-                              price: 'QAR 35.00',
-                              productName: 'Product 3',
-                              quantity: '3',
-                              showReview: true,
-                              buttonText: 'Reorder',
+                            child: GestureDetector(
+                              onTap: (){
+                                Get.to(()=>OrderSummary());
+                              },
+                              child: _buildOrderCard(
+                                image: NetworkImage('https://via.placeholder.com/100'),
+                                status: 'Delivered',
+                                date: 'July 12, 2023',
+                                time: '9:45 AM',
+                                price: 'QAR 35.00',
+                                productName: 'Product 3',
+                                quantity: '3',
+                                showReview: true,
+                                buttonText: 'Reorder',
+                              ),
                             )
                           );
                         },
@@ -306,20 +318,24 @@ class MyOrdersScreen extends StatelessWidget {
     String? buttonText,
   }) {
     return Column(
-      children: [
 
+      children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image(image: image!, width: 100, height: 120),
+              Image(image: image!, width: 100, height: 120,fit: BoxFit.cover,),
               SizedBox(width: 8),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(productName!,
                       style: TextStyle(fontWeight: FontWeight.bold)),
+                  SizedBox(height: 10,),
                   Text('Price: $price'),
+                  SizedBox(height: 10,),
                   Text('Quantity: $quantity'),
                 ],
               ),

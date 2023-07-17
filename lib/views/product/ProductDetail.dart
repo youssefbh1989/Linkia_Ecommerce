@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
 import 'package:linkia_ecommerce/views/bag/BagScreen.dart';
+import 'package:linkia_ecommerce/views/bag/ChekoutScreen.dart';
 import 'package:linkia_ecommerce/views/reviews/ReviewsScreen.dart';
 
 class ProductDetail extends StatefulWidget {
@@ -251,7 +252,9 @@ class _ProductDetailState extends State<ProductDetail> {
                                 8), // Set your desired corner radius
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(()=>ChekoutScreen());
+                        },
                         child: Text('Add to Cart',
                             style: GoogleFonts.beVietnamPro(
                                 color: AppColor.primaryWhiteColor,

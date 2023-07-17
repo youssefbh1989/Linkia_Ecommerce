@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:linkia_ecommerce/colors/Colors.dart';
+import 'package:linkia_ecommerce/utiles/ColumnBuilder.dart';
 import 'package:linkia_ecommerce/widget/drawer.dart';
+
+import 'ChekoutScreen.dart';
 
 class BagScreen extends StatefulWidget {
   const BagScreen({Key? key}) : super(key: key);
@@ -51,7 +56,7 @@ class _BagScreenState extends State<BagScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 16),
-              ListView.builder(
+              ColumnBuilder(
                 shrinkWrap: true,
                 itemCount: products.length,
                 itemBuilder: (context, index) {
@@ -136,7 +141,7 @@ class _BagScreenState extends State<BagScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Implement the logic for the checkout button
+                  Get.to(()=>ChekoutScreen());
                   },
                   child: Text(
                     'Checkout',
