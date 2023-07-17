@@ -113,28 +113,40 @@ class ChekoutScreen extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: Text('PayPal'),
+                title: Text('PayPal',  style: GoogleFonts.beVietnamPro(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),),
                 leading: Icon(Icons.payment),
                 onTap: () {
                   _showOrderPlacementSuccessBottomSheet(context);
                 },
               ),
               ListTile(
-                title: Text('Apple Pay'),
+                title: Text('Apple Pay', style: GoogleFonts.beVietnamPro(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                )),
                 leading: Icon(Icons.payment),
                 onTap: () {
                   _showPaymentFailureBottomSheet(context);
                 },
               ),
               ListTile(
-                title: Text('Credit/Debit Card'),
+                title: Text('Credit/Debit Card', style: GoogleFonts.beVietnamPro(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                )),
                 leading: Icon(Icons.payment),
                 onTap: () {
                   _showPaymentFailureBottomSheet(context);
                 },
               ),
               ListTile(
-                title: Text('Bank Transfer'),
+                title: Text('Bank Transfer', style: GoogleFonts.beVietnamPro(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                )),
                 leading: Icon(Icons.payment),
                 onTap: () {
                   _showPaymentFailureBottomSheet(context);
@@ -188,7 +200,7 @@ class ChekoutScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Price Details',
+                        'PRICE DETAILS',
                         style: GoogleFonts.tenorSans(
                           fontSize: 18,
                           fontWeight: FontWeight.w400,
@@ -297,12 +309,12 @@ class ChekoutScreen extends StatelessWidget {
             style: GoogleFonts.beVietnamPro(
                 color: AppColor.primaryGreyColor,
                 fontWeight: FontWeight.w400,
-                fontSize: 15),
+                fontSize: 14),
           ),
           Text(value,style:GoogleFonts.beVietnamPro(
               color: AppColor.primaryGreyColor,
               fontWeight: FontWeight.w400,
-              fontSize: 13)),
+              fontSize: 12)),
         ],
       ),
     );
@@ -423,14 +435,23 @@ class ChekoutScreen extends StatelessWidget {
               SizedBox(height: 16.0),
               Text(
                 'Order Placed Successfully',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                  style: GoogleFonts.tenorSans(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  )
               ),
               SizedBox(height: 8.0),
+              Image.asset(
+                'assets/imgs/divider.png',
+                width: 150,
+                height: 50,
+                color: AppColor.primaryBlackColor,
+              ),
               Text(
-                'Your Order has been successfully placed! For more details, go to My Orders.',
+                'Your Order has been successfully placed! For more details, go to My Orders.', style: GoogleFonts.beVietnamPro(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+              ),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 16.0),
@@ -449,6 +470,7 @@ class ChekoutScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
                                 8),
+                            side: BorderSide(color: Colors.black),
                             // Set your desired corner radius
                           ),
                         ),
