@@ -253,7 +253,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           ),
                         ),
                         onPressed: () {
-                          Get.to(()=>ChekoutScreen());
+                    // TO DO
                         },
                         child: Text('Add to Cart',
                             style: GoogleFonts.beVietnamPro(
